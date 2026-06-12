@@ -1,0 +1,14 @@
+apiVersion: platform.mahy.love/v1alpha1
+kind: DoksCapacityOperator
+metadata:
+  labels:
+    app.kubernetes.io/name: doks-capacity-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: dokscapacityoperator-sample
+spec:
+  # No clusterID — the operator discovers it from the pool.
+  poolID: "pool-id"        # or use poolName: "chatly-pool"
+  triggerFreeNodes: 3             # expand when only 3 nodes of headroom remain
+  expandBy: 5                     # add 5 to the pool's autoscale max each time
+  maxNodes: 20                    # HARD CEILING — never raise the pool max above 20
+  cooldownMinutes: 15             # wait 15 min between expansions
