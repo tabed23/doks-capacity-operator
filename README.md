@@ -146,7 +146,7 @@ metadata:
   name: dokscapacityoperator-sample
 spec:
   # No clusterID — the operator discovers it from the pool.
-  poolID: "your-pool-uuid"   # or use poolName: "chatly-pool"
+  poolID: "your-pool-uuid"   # or use poolName: "chat-pool"
   triggerFreeNodes: 3        # expand when only 3 nodes of headroom remain
   expandBy: 5                # add 5 to the pool's autoscale max each time
   maxNodes: 20               # HARD CEILING — never raise the pool max above 20
